@@ -14,11 +14,11 @@ function setup() {
 }
 
 function draw() {
-	frameRate(2);
+	frameRate(4);
 	fill(random(256), random(256), random(256));
 	extraCanvas.push();
 	extraCanvas.translate(width * 0.8, height * 0.5);
-	extraCanvas.fill(255,182,193);
+	extraCanvas.fill(255, 182, 193);
 	extraCanvas.rotate(frameCount / -100.0);
 	extraCanvas.noStroke();
 	star(windowWidth / 4, windowHeight / 2, 30, 70, 5); //left side
@@ -50,6 +50,13 @@ function draw() {
 	strokeWeight(7);
 	line(windowWidth / 2, 0, windowWidth / 2, windowHeight);
 	image(extraCanvas, 0, 0);
+
+	if (mouseIsPressed) {
+		fill(int(random(256)), int(random(256)), int(random(256)));
+		let circleDiameterX = [10, 20, 30, 40, 50];
+		strokeWeight(0.75);
+		ellipse(mouseX, mouseY, random(circleDiameterX)); //circle trail when mouse is held down
+	}
 }
 
 function star(x, y, radius1, radius2, npoints) {
