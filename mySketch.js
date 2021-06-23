@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-	frameRate(10);
+	frameRate(2);
 	fill(random(256), random(256), random(256));
 	extraCanvas.push();
 	extraCanvas.translate(width * 0.8, height * 0.5);
